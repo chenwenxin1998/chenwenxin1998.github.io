@@ -6,21 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Chen&#39;Blog</title>
+  <title>从树的遍历理解递归 | Chen&#39;Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="从树的遍历理解递归1234567void firstTra(Tree *T)&amp;#123;  if(T)&amp;#123;  cout&amp;lt;&amp;lt;T-&amp;gt;data;  firstTra(T-&amp;gt;leftTree);  firstTra(T-&amp;gt;rightTree);  &amp;#125;  &amp;#125;             图1.只有左子树的简单二叉树            图2.递归遍历执">
+  <meta name="description" content="1234567void firstTra(Tree *T)&amp;#123;  	if(T)&amp;#123;  		cout&amp;lt;&amp;lt;T-&amp;gt;data;  		firstTra(T-&amp;gt;leftTree);  		firstTra(T-&amp;gt;rightTree);  		&amp;#125;  	&amp;#125;             图1.只有左子树的简单二叉树            图2.递归遍历">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Chen&#39;Blog">
+<meta property="og:title" content="从树的遍历理解递归">
 <meta property="og:url" content="http://yoursite.com/2018/10/28/二叉树的遍历理解递归/index.html">
 <meta property="og:site_name" content="Chen&#39;Blog">
-<meta property="og:description" content="从树的遍历理解递归1234567void firstTra(Tree *T)&amp;#123;  if(T)&amp;#123;  cout&amp;lt;&amp;lt;T-&amp;gt;data;  firstTra(T-&amp;gt;leftTree);  firstTra(T-&amp;gt;rightTree);  &amp;#125;  &amp;#125;             图1.只有左子树的简单二叉树            图2.递归遍历执">
+<meta property="og:description" content="1234567void firstTra(Tree *T)&amp;#123;  	if(T)&amp;#123;  		cout&amp;lt;&amp;lt;T-&amp;gt;data;  		firstTra(T-&amp;gt;leftTree);  		firstTra(T-&amp;gt;rightTree);  		&amp;#125;  	&amp;#125;             图1.只有左子树的简单二叉树            图2.递归遍历">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/chenwenxin1998/MyPostImage/master/pic/%E9%80%92%E5%BD%921.bmp">
 <meta property="og:image" content="https://raw.githubusercontent.com/chenwenxin1998/MyPostImage/master/pic/%E9%80%92%E5%BD%922.bmp">
-<meta property="og:updated_time" content="2018-10-28T12:24:19.639Z">
+<meta property="og:updated_time" content="2018-10-28T12:28:15.624Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chen&#39;Blog">
-<meta name="twitter:description" content="从树的遍历理解递归1234567void firstTra(Tree *T)&amp;#123;  if(T)&amp;#123;  cout&amp;lt;&amp;lt;T-&amp;gt;data;  firstTra(T-&amp;gt;leftTree);  firstTra(T-&amp;gt;rightTree);  &amp;#125;  &amp;#125;             图1.只有左子树的简单二叉树            图2.递归遍历执">
+<meta name="twitter:title" content="从树的遍历理解递归">
+<meta name="twitter:description" content="1234567void firstTra(Tree *T)&amp;#123;  	if(T)&amp;#123;  		cout&amp;lt;&amp;lt;T-&amp;gt;data;  		firstTra(T-&amp;gt;leftTree);  		firstTra(T-&amp;gt;rightTree);  		&amp;#125;  	&amp;#125;             图1.只有左子树的简单二叉树            图2.递归遍历">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/chenwenxin1998/MyPostImage/master/pic/%E9%80%92%E5%BD%921.bmp">
   
     <link rel="alternative" href="/atom.xml" title="Chen&#39;Blog" type="application/atom+xml">
@@ -164,9 +164,24 @@
             <article id="post-二叉树的遍历理解递归" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      从树的遍历理解递归
+    </h1>
+  
+
+        
+        <a href="/2018/10/28/二叉树的遍历理解递归/" class="archive-article-date">
+  	<time datetime="2018-10-28T11:31:58.147Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-28</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="从树的遍历理解递归"><a href="#从树的遍历理解递归" class="headerlink" title="从树的遍历理解递归"></a>从树的遍历理解递归</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">void firstTra(Tree *T)&#123;  </span><br><span class="line">if(T)&#123;  </span><br><span class="line">cout&lt;&lt;T-&gt;data;  </span><br><span class="line">firstTra(T-&gt;leftTree);  </span><br><span class="line">firstTra(T-&gt;rightTree);  </span><br><span class="line">&#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">void firstTra(Tree *T)&#123;  </span><br><span class="line">	if(T)&#123;  </span><br><span class="line">		cout&lt;&lt;T-&gt;data;  </span><br><span class="line">		firstTra(T-&gt;leftTree);  </span><br><span class="line">		firstTra(T-&gt;rightTree);  </span><br><span class="line">		&#125;  </span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 <p><img src="https://raw.githubusercontent.com/chenwenxin1998/MyPostImage/master/pic/%E9%80%92%E5%BD%921.bmp" alt=""><br>            图1.只有左子树的简单二叉树</p>
 <p><img src="https://raw.githubusercontent.com/chenwenxin1998/MyPostImage/master/pic/%E9%80%92%E5%BD%922.bmp" alt=""><br>           图2.递归遍历执行的顺序 </p>
 <p><strong>首先我们应该了解程序的执行是逐句的，也就是说当上一条语句运行结束后才会执行下一条语句.  </strong></p>
