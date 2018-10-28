@@ -164,11 +164,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>##从树的遍历理解递归##<br><figure class="highlight plain"><figcaption><span>firstTra(Tree *T)&#123;  </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">if(T)&#123;  </span><br><span class="line"></span><br><span class="line">cout&lt;&lt;T-&gt;data;  </span><br><span class="line"></span><br><span class="line">firstTra(T-&gt;leftTree);  </span><br><span class="line"></span><br><span class="line">firstTra(T-&gt;rightTree);  </span><br><span class="line">&#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <p>#从树的遍历理解递归<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">void firstTra(Tree *T)&#123;  </span><br><span class="line">if(T)&#123;  </span><br><span class="line">cout&lt;&lt;T-&gt;data;  </span><br><span class="line">firstTra(T-&gt;leftTree);  </span><br><span class="line">firstTra(T-&gt;rightTree);  </span><br><span class="line">&#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://raw.githubusercontent.com/chenwenxin1998/MyPostImage/master/pic/%E9%80%92%E5%BD%921.bmp" alt=""><br>            图1.只有左子树的简单二叉树</p>
+<p><img src="https://github.com/chenwenxin1998/MyPostImage/blob/master/pic/%E9%80%92%E5%BD%922.bmp" alt=""><br>           图2.递归遍历执行的顺序 </p>
 <p><strong>首先我们应该了解程序的执行是逐句的，也就是说当上一条语句运行结束后才会执行下一条语句.  </strong></p>
 <p>递归：我们可以将它拆分为两个字单独来看：</p>
 <p>递：向下传递；归：往回运行</p>
-<p>在对树的遍历中，使用语句简洁的递归算法（先序遍历）：当当前结点不为空时，调用该函数对其左子节点进行遍历，如果仍不为空，则继续调用，一直到所访问的结点为空，即一直到firstTra（D-&gt;leftTree）。（这里可以理解为向下传递也就是递归的“递”）即如图所示。<br>当D-&gt;leftTree为NULL时，返回第四步然后执行第四步的剩下的语句，当第四步end后，返回第三步，当第三步执行完成后，也就是第二步的firstTra()执行完毕。然后执行第二步后面的语句。最后返回第一步。执行后面的语句。这里可以理解为“归”）。<br>这样对递归的理解就比较容易了。</p>
+<p>在对树的遍历中，使用语句简洁的递归算法（先序遍历）：当当前结点不为空时，调用该函数对其左子节点进行遍历，如果仍不为空，则继续调用，一直到所访问的结点为空，即一直到firstTra（D-&gt;leftTree）。（这里可以理解为向下传递也就是递归的“递”）即如图所示。<br>当D-&gt;leftTree为NULL时，返回第四步然后执行第四步的剩下的语句，当第四步end后，返回第三步，当第三步执行完成后，也就是第二步的firstTra()执行完毕。然后执行第二步后面的语句。最后返回第一步。执行后面的语句。直到执行到第一个最先打开的的函数运行完毕。这里可以理解为“归”）。<br>这样对递归的理解就比较容易了。</p>
+<p>2018/10/28 20:17:45<br>-原创</p>
 
       
 
