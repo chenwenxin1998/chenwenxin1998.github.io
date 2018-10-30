@@ -6,22 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>从树的遍历理解递归 | Chen&#39;Blog</title>
+  <title>算法练习1 | Chen&#39;Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1234567void firstTra(Tree *T)&amp;#123;  	if(T)&amp;#123;  		cout&amp;lt;&amp;lt;T-&amp;gt;data;  		firstTra(T-&amp;gt;leftTree);  		firstTra(T-&amp;gt;rightTree);  		&amp;#125;  	&amp;#125;             图1.只有左子树的简单二叉树            图2.递归遍历">
+  <meta name="description" content="描述给定一个整数数组（下标由 0 到 n-1，其中 n 表示数组的规模），以及一个查询列表。每一个查询列表有两个整数 [start, end] 。 对于每个查询，计算出数组中从下标 start 到 end 之间的数的总和，并返回在结果列表中。 样例对于数组 [1,2,7,8,5]，查询[(1,2),(0,4),(2,4)], 返回 [9,23,20]. 代码//Definition of Inte">
 <meta property="og:type" content="article">
-<meta property="og:title" content="从树的遍历理解递归">
-<meta property="og:url" content="http://yoursite.com/2018/10/28/二叉树的遍历理解递归/index.html">
+<meta property="og:title" content="算法练习1">
+<meta property="og:url" content="http://yoursite.com/2018/10/29/算法练习1/index.html">
 <meta property="og:site_name" content="Chen&#39;Blog">
-<meta property="og:description" content="1234567void firstTra(Tree *T)&amp;#123;  	if(T)&amp;#123;  		cout&amp;lt;&amp;lt;T-&amp;gt;data;  		firstTra(T-&amp;gt;leftTree);  		firstTra(T-&amp;gt;rightTree);  		&amp;#125;  	&amp;#125;             图1.只有左子树的简单二叉树            图2.递归遍历">
+<meta property="og:description" content="描述给定一个整数数组（下标由 0 到 n-1，其中 n 表示数组的规模），以及一个查询列表。每一个查询列表有两个整数 [start, end] 。 对于每个查询，计算出数组中从下标 start 到 end 之间的数的总和，并返回在结果列表中。 样例对于数组 [1,2,7,8,5]，查询[(1,2),(0,4),(2,4)], 返回 [9,23,20]. 代码//Definition of Inte">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/chenwenxin1998/MyPostImage/master/pic/%E9%80%92%E5%BD%921.bmp">
-<meta property="og:image" content="https://raw.githubusercontent.com/chenwenxin1998/MyPostImage/master/pic/%E9%80%92%E5%BD%922.bmp">
-<meta property="og:updated_time" content="2018-10-28T12:28:15.624Z">
+<meta property="og:updated_time" content="2018-10-30T09:46:08.334Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="从树的遍历理解递归">
-<meta name="twitter:description" content="1234567void firstTra(Tree *T)&amp;#123;  	if(T)&amp;#123;  		cout&amp;lt;&amp;lt;T-&amp;gt;data;  		firstTra(T-&amp;gt;leftTree);  		firstTra(T-&amp;gt;rightTree);  		&amp;#125;  	&amp;#125;             图1.只有左子树的简单二叉树            图2.递归遍历">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/chenwenxin1998/MyPostImage/master/pic/%E9%80%92%E5%BD%921.bmp">
+<meta name="twitter:title" content="算法练习1">
+<meta name="twitter:description" content="描述给定一个整数数组（下标由 0 到 n-1，其中 n 表示数组的规模），以及一个查询列表。每一个查询列表有两个整数 [start, end] 。 对于每个查询，计算出数组中从下标 start 到 end 之间的数的总和，并返回在结果列表中。 样例对于数组 [1,2,7,8,5]，查询[(1,2),(0,4),(2,4)], 返回 [9,23,20]. 代码//Definition of Inte">
   
     <link rel="alternative" href="/atom.xml" title="Chen&#39;Blog" type="application/atom+xml">
   
@@ -161,34 +158,122 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-二叉树的遍历理解递归" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-算法练习1" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      从树的遍历理解递归
+      算法练习1
     </h1>
   
 
         
-        <a href="/2018/10/28/二叉树的遍历理解递归/" class="archive-article-date">
-  	<time datetime="2018-10-28T11:31:58.147Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-28</time>
+        <a href="/2018/10/29/算法练习1/" class="archive-article-date">
+  	<time datetime="2018-10-29T03:34:10.057Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-29</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">void firstTra(Tree *T)&#123;  </span><br><span class="line">	if(T)&#123;  </span><br><span class="line">		cout&lt;&lt;T-&gt;data;  </span><br><span class="line">		firstTra(T-&gt;leftTree);  </span><br><span class="line">		firstTra(T-&gt;rightTree);  </span><br><span class="line">		&#125;  </span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://raw.githubusercontent.com/chenwenxin1998/MyPostImage/master/pic/%E9%80%92%E5%BD%921.bmp" alt=""><br>            图1.只有左子树的简单二叉树</p>
-<p><img src="https://raw.githubusercontent.com/chenwenxin1998/MyPostImage/master/pic/%E9%80%92%E5%BD%922.bmp" alt=""><br>           图2.递归遍历执行的顺序 </p>
-<p><strong>首先我们应该了解程序的执行是逐句的，也就是说当上一条语句运行结束后才会执行下一条语句.  </strong></p>
-<p>递归：我们可以将它拆分为两个字单独来看：</p>
-<p>递：向下传递；归：往回运行</p>
-<p>在对树的遍历中，使用语句简洁的递归算法（先序遍历）：当当前结点不为空时，调用该函数对其左子节点进行遍历，如果仍不为空，则继续调用，一直到所访问的结点为空，即一直到firstTra（D-&gt;leftTree）。（这里可以理解为向下传递也就是递归的“递”）即如图所示。<br>当D-&gt;leftTree为NULL时，返回第四步然后执行第四步的剩下的语句，当第四步end后，返回第三步，当第三步执行完成后，也就是第二步的firstTra()执行完毕。然后执行第二步后面的语句。最后返回第一步。执行后面的语句。直到执行到第一个最先打开的的函数运行完毕。这里可以理解为“归”）。<br>这样对递归的理解就比较容易了。</p>
-<p>2018/10/28 20:17:45<br>-原创</p>
+        <h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p>给定一个整数数组（下标由 0 到 n-1，其中 n 表示数组的规模），以及一个查询列表。每一个查询列表有两个整数 [start, end] 。 对于每个查询，计算出数组中从下标 start 到 end 之间的数的总和，并返回在结果列表中。</p>
+<h2 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h2><p>对于数组 [1,2,7,8,5]，查询[(1,2),(0,4),(2,4)], 返回 [9,23,20].</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre><code>//Definition of Interval:
+classs Interval {
+    int start, end;
+    nterval(int start, int end) {
+        this-&gt;start = start;
+        this-&gt;end = end;
+  }
+  }
+
+
+class Solution {
+/*public:
+/**
+ * @param A: An integer list
+ * @param queries: An query list
+ * @return: The result list
+  */
+vector&lt;long long&gt; intervalSum(vector&lt;int&gt; &amp;A,vector&lt;Interval&gt; &amp;queries) {
+// write your code here
+vector&lt;long long&gt; x;
+
+for(int i = 0;i&lt;queries.size();i++){
+long long temp = 0;
+for(int j = queries[i].start;j&lt;= queries[i].end;j++){
+temp+=A[j];
+}
+x.push_back(temp);
+}
+return x;
+}
+</code></pre><h2 id="提升"><a href="#提升" class="headerlink" title="提升"></a>提升</h2><p>class SegmentTree {</p>
+<p>public:<code></code></p>
+<pre><code>SegmentTree *left, *right;
+int start, end;`
+long long sum;
+
+SegmentTree(int start, int end, int sum=0): left(NULL), right(NULL), start(start), end(end), sum(sum) {};
+
+static SegmentTree *build(int start, int end, vector&lt;int&gt; &amp;a) {
+    if (start &gt; end)
+        return NULL;
+
+    SegmentTree * node = new SegmentTree(start, end, a[start]);
+    if (start == end) 
+        return node;
+
+    int mid = (start + end) / 2;
+    node-&gt;left = build(start, mid, a);
+    node-&gt;right = build(mid+1, end, a);
+    node-&gt;sum = node-&gt;left-&gt;sum + node-&gt;right-&gt;sum;
+
+    return node;
+}
+
+static long long query(SegmentTree *root, int start, int end) {
+    if (start &lt;= root-&gt;start &amp;&amp;  root-&gt;end &lt;= end) {
+        return root-&gt;sum;
+    }
+
+    if (root-&gt;left-&gt;end &gt;= end) {
+        return query(root-&gt;left, start, end);
+    }
+    if (root-&gt;right-&gt;start &lt;= start) {
+        return query(root-&gt;right, start, end);
+    }
+
+    long long leftsum = query(root-&gt;left, start, root-&gt;left-&gt;end);
+    long long rightsum = query(root-&gt;right, root-&gt;right-&gt;start, end);
+    return leftsum + rightsum;
+}
+</code></pre><p>};</p>
+<p><code>class Solution {</code> </p>
+<pre><code>public:
+
+/**
+ *@param A, queries: Given an integer array and an query list
+
+ *@return: The result list
+ */
+
+vector&lt;long longintervalSum(vector&lt;int&amp;A, vector&lt;Interval&amp;queries) {
+
+    // write your code here
+
+    SegmentTree * root = SegmentTree::build(0, A.size()-1, A);
+    vector&lt;long longresult;
+
+    int len = queries.size();
+    for (int i = 0; i &lt; len; ++i)
+        result.push_back(SegmentTree::query(root, queries[i].start, queries[i].end));
+
+    return result;
+}
+</code></pre><p>};<code></code></p>
 
       
 
@@ -268,7 +353,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/10/28/二叉树的遍历理解递归/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/10/29/算法练习1/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -282,15 +367,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/10/29/算法练习1/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          算法练习1
-        
-      </div>
-    </a>
   
+    <a href="/2018/10/28/二叉树的遍历理解递归/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">从树的遍历理解递归</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
@@ -316,7 +397,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="二叉树的遍历理解递归" data-title="从树的遍历理解递归" data-url="http://yoursite.com/2018/10/28/二叉树的遍历理解递归/"></div>
+	<div class="ds-thread" data-thread-key="算法练习1" data-title="算法练习1" data-url="http://yoursite.com/2018/10/29/算法练习1/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
