@@ -1,1 +1,240 @@
-<!doctype html><html lang="en"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1"><meta http-equiv="X-UA-Compatible" content="ie=edge"><link rel="shortcut icon" href="/static/favicon.ico"><title>Chen&#39;Blog</title><link href="/static/css/app.c64eadfc8d3abfc9d85514dba4054813.css" rel="stylesheet"></head><body><div id="app"></div><script type="text/javascript" src="/static/js/manifest.992b63bf2abbf3194771.js"></script><script type="text/javascript" src="/static/js/vendor.e12dc8c9af1f7aa12436.js"></script><script type="text/javascript" src="/static/js/app.bc036f9167871d39aecf.js"></script></body></html>
+<html>
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.8.0">
+<meta charset="UTF-8">
+
+
+   <title>算法练习1 | Chen&#39;Blog</title>
+ 
+
+
+<meta name="description" content="a blog of a student majoring in cs!">
+<meta name="author" content="ChenWenxin">
+<meta property="og:title" content="算法练习1">
+<meta property="og:description" content="a blog of a student majoring in cs!">
+<meta property="og:site_name" content="Chen&#39;Blog">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js" integrity="sha256-CfcERD4Ov4+lKbWbYqXD6aFM9M51gN4GUEtDhkWABMo=" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+<link rel="stylesheet" href="/./css/style.css">
+
+</head>
+<body>
+	<!-- Menu -->
+       <nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-dark page-navbar gradient">
+      <div class="container">
+        <a class="navbar-brand logo" href="http://yoursite.com">Chen&#39;Blog</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item item">
+               
+                </li><li class="nav-item item">
+                  <a class="nav-link" href="/">Home</a>
+                </li>
+                  
+                <li class="nav-item item">
+                  <a class="nav-link" href="/archives">Archives</a>
+                </li>
+                  
+                <li class="nav-item item">
+                  <a class="nav-link" href="/categories/Category-1/random/">#Random</a>
+                </li>
+                  
+                <li class="nav-item item">
+                  <a class="nav-link" href="/contact/">Contact</a>
+                </li>
+                  
+              
+            </ul>
+          </div>
+                                
+      </div>
+    </nav>
+    
+    <main class="page main-page">
+    <div class="container blogPost">
+    <div class="row">
+        <div class="col-sm-8">
+            <h2 class="blog-post-title">
+            算法练习1
+            </h2>
+            <p class="meta"><i class="far fa-clock"></i>
+                2018-10-29 
+
+            </p>
+            <!-- Content -->
+            <h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p>给定一个整数数组（下标由 0 到 n-1，其中 n 表示数组的规模），以及一个查询列表。每一个查询列表有两个整数 [start, end] 。 对于每个查询，计算出数组中从下标 start 到 end 之间的数的总和，并返回在结果列表中。</p>
+<h2 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h2><p>对于数组 [1,2,7,8,5]，查询[(1,2),(0,4),(2,4)], 返回 [9,23,20].</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre><code>//Definition of Interval:
+classs Interval {
+    int start, end;
+    nterval(int start, int end) {
+        this-&gt;start = start;
+        this-&gt;end = end;
+  }
+  }
+
+
+class Solution {
+/*public:
+/**
+ * @param A: An integer list
+ * @param queries: An query list
+ * @return: The result list
+  */
+vector&lt;long long&gt; intervalSum(vector&lt;int&gt; &amp;A,vector&lt;Interval&gt; &amp;queries) {
+// write your code here
+vector&lt;long long&gt; x;
+
+for(int i = 0;i&lt;queries.size();i++){
+long long temp = 0;
+for(int j = queries[i].start;j&lt;= queries[i].end;j++){
+temp+=A[j];
+}
+x.push_back(temp);
+}
+return x;
+}
+</code></pre><h2 id="提升"><a href="#提升" class="headerlink" title="提升"></a>提升</h2><p>class SegmentTree {</p>
+<p>public:<code></code></p>
+<pre><code>SegmentTree *left, *right;
+int start, end;`
+long long sum;
+
+SegmentTree(int start, int end, int sum=0): left(NULL), right(NULL), start(start), end(end), sum(sum) {};
+
+static SegmentTree *build(int start, int end, vector&lt;int&gt; &amp;a) {
+    if (start &gt; end)
+        return NULL;
+
+    SegmentTree * node = new SegmentTree(start, end, a[start]);
+    if (start == end) 
+        return node;
+
+    int mid = (start + end) / 2;
+    node-&gt;left = build(start, mid, a);
+    node-&gt;right = build(mid+1, end, a);
+    node-&gt;sum = node-&gt;left-&gt;sum + node-&gt;right-&gt;sum;
+
+    return node;
+}
+
+static long long query(SegmentTree *root, int start, int end) {
+    if (start &lt;= root-&gt;start &amp;&amp;  root-&gt;end &lt;= end) {
+        return root-&gt;sum;
+    }
+
+    if (root-&gt;left-&gt;end &gt;= end) {
+        return query(root-&gt;left, start, end);
+    }
+    if (root-&gt;right-&gt;start &lt;= start) {
+        return query(root-&gt;right, start, end);
+    }
+
+    long long leftsum = query(root-&gt;left, start, root-&gt;left-&gt;end);
+    long long rightsum = query(root-&gt;right, root-&gt;right-&gt;start, end);
+    return leftsum + rightsum;
+}
+</code></pre><p>};</p>
+<p><code>class Solution {</code> </p>
+<pre><code>public:
+
+/**
+ *@param A, queries: Given an integer array and an query list
+
+ *@return: The result list
+ */
+
+vector&lt;long longintervalSum(vector&lt;int&amp;A, vector&lt;Interval&amp;queries) {
+
+    // write your code here
+
+    SegmentTree * root = SegmentTree::build(0, A.size()-1, A);
+    vector&lt;long longresult;
+
+    int len = queries.size();
+    for (int i = 0; i &lt; len; ++i)
+        result.push_back(SegmentTree::query(root, queries[i].start, queries[i].end));
+
+    return result;
+}
+</code></pre><p>};<code></code></p>
+
+            <br>
+            <p class="meta">
+                
+
+            </p>
+        </div>
+        <div class="col-sm-4">
+            <span><b>TL;DR</b></span>
+            <p>
+                Gradient is clean and modern hexo theme.
+            </p>
+            <hr>
+            <span><a href="https://twitter.com/hexojs" target="_blank" rel="noopener"><b><i class="fab fa-twitter-square"></i> <i class="fas fa-at"></i>hexojs</b></a></span>
+            <br>
+            <a class="twitter-timeline" data-height="800" data-dnt="true" data-chrome="nofooter transparent noheader noborders " href="https://twitter.com/hexojs?ref_src=twsrc%5Etfw"></a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+    </div>
+</div>
+<!-- Menu fade on scroll -->
+<script>
+/* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
+// Setup isScrolling variable
+var isScrolling;
+var prevScrollpos = window.pageYOffset;
+// Listen for scroll events
+window.addEventListener('scroll', function ( event ) {
+// Clear our timeout throughout the scroll
+window.clearTimeout( isScrolling );
+// Set a timeout to run after scrolling ends
+isScrolling = setTimeout(function() {
+var currentScrollPos = window.pageYOffset;
+// Run the callback
+if (prevScrollpos > currentScrollPos) {
+$("#navbar").slideDown();
+} else {
+console.log(currentScrollPos);
+$("#navbar").slideUp();
+}
+prevScrollpos = currentScrollPos;
+}, 66);
+}, false);
+</script>
+        
+            <a class="float-left gradient btn paginationbtn" href="/2018/10/28/二叉树的遍历理解递归/"><i class="fas fa-chevron-left"></i></a>
+        
+        
+            <a class="float-right gradient btn paginationbtn" href="/2018/11/04/久源杯参赛过程记录（1）/"><i class="fas fa-chevron-right"></i></a>
+        
+  
+
+	</main>
+	<!-- Footer -->
+          <footer class="page-footer">
+        <div class="container">
+          <div class="social-icons">
+          
+              <a href="https://hexo.io/" title="Hexo.io" target="_blank" rel="noopener" class="fas fa-home"></a>
+          
+              <a href="https://twitter.com/hexojs" title="@hexojs" target="_blank" rel="noopener" class="fab fa-twitter"></a>
+          
+              <a href="https://github.com/RandomAdversary/Gradient/issues" title="Report issue" target="_blank" rel="noopener" class="fas fa-bug"></a>
+          
+          </div>
+        </div>
+      </footer>
+    <!-- After footer scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+</body>
+</html>
