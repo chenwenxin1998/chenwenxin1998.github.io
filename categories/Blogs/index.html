@@ -6,22 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://chenwx.cn">
-  <title>从树的遍历理解递归 | Chen&#39;Blog</title>
+  <title>Category: Blogs | Chen&#39;Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1234567void firstTra(Tree *T)&amp;#123;  	if(T)&amp;#123;  		cout&amp;lt;&amp;lt;T-&amp;gt;data;  		firstTra(T-&amp;gt;leftTree);  		firstTra(T-&amp;gt;rightTree);  		&amp;#125;  	&amp;#125;             图1.只有左子树的简单二叉树            图2.递归遍历">
-<meta property="og:type" content="article">
-<meta property="og:title" content="从树的遍历理解递归">
-<meta property="og:url" content="http://chenwx.cn/2018/10/28/二叉树的遍历理解递归/index.html">
+  <meta name="description" content="a blog of a student majoring in cs!">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chen&#39;Blog">
+<meta property="og:url" content="http://chenwx.cn/categories/Blogs/index.html">
 <meta property="og:site_name" content="Chen&#39;Blog">
-<meta property="og:description" content="1234567void firstTra(Tree *T)&amp;#123;  	if(T)&amp;#123;  		cout&amp;lt;&amp;lt;T-&amp;gt;data;  		firstTra(T-&amp;gt;leftTree);  		firstTra(T-&amp;gt;rightTree);  		&amp;#125;  	&amp;#125;             图1.只有左子树的简单二叉树            图2.递归遍历">
+<meta property="og:description" content="a blog of a student majoring in cs!">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/chenwenxin1998/MyPostImage/master/pic/%E9%80%92%E5%BD%921.bmp">
-<meta property="og:image" content="https://raw.githubusercontent.com/chenwenxin1998/MyPostImage/master/pic/%E9%80%92%E5%BD%922.bmp">
-<meta property="og:updated_time" content="2018-10-28T12:28:15.624Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="从树的遍历理解递归">
-<meta name="twitter:description" content="1234567void firstTra(Tree *T)&amp;#123;  	if(T)&amp;#123;  		cout&amp;lt;&amp;lt;T-&amp;gt;data;  		firstTra(T-&amp;gt;leftTree);  		firstTra(T-&amp;gt;rightTree);  		&amp;#125;  	&amp;#125;             图1.只有左子树的简单二叉树            图2.递归遍历">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/chenwenxin1998/MyPostImage/master/pic/%E9%80%92%E5%BD%921.bmp">
+<meta name="twitter:title" content="Chen&#39;Blog">
+<meta name="twitter:description" content="a blog of a student majoring in cs!">
   
     <link rel="alternative" href="/atom.xml" title="Chen&#39;Blog" type="application/atom+xml">
   
@@ -157,187 +153,75 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-二叉树的遍历理解递归" class="article article-type-post " itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      从树的遍历理解递归
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/04/20/分流建议/" class="archive-article-date">
+  	<time datetime="2019-04-20T13:47:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-20</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/04/20/分流建议/">关于对计算机大类分流的建议</a>
     </h1>
   
 
-        
-        <a href="/2018/10/28/二叉树的遍历理解递归/" class="archive-article-date">
-  	<time datetime="2018-10-28T11:31:58.147Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">void firstTra(Tree *T)&#123;  </span><br><span class="line">	if(T)&#123;  </span><br><span class="line">		cout&lt;&lt;T-&gt;data;  </span><br><span class="line">		firstTra(T-&gt;leftTree);  </span><br><span class="line">		firstTra(T-&gt;rightTree);  </span><br><span class="line">		&#125;  </span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://raw.githubusercontent.com/chenwenxin1998/MyPostImage/master/pic/%E9%80%92%E5%BD%921.bmp" alt=""><br>            图1.只有左子树的简单二叉树</p>
-<p><img src="https://raw.githubusercontent.com/chenwenxin1998/MyPostImage/master/pic/%E9%80%92%E5%BD%922.bmp" alt=""><br>           图2.递归遍历执行的顺序 </p>
-<p><strong>首先我们应该了解程序的执行是逐句的，也就是说当上一条语句运行结束后才会执行下一条语句.  </strong></p>
-<p>递归：我们可以将它拆分为两个字单独来看：</p>
-<p>递：向下传递；归：往回运行</p>
-<p>在对树的遍历中，使用语句简洁的递归算法（先序遍历）：当当前结点不为空时，调用该函数对其左子节点进行遍历，如果仍不为空，则继续调用，一直到所访问的结点为空，即一直到firstTra（D-&gt;leftTree）。（这里可以理解为向下传递也就是递归的“递”）即如图所示。<br>当D-&gt;leftTree为NULL时，返回第四步然后执行第四步的剩下的语句，当第四步end后，返回第三步，当第三步执行完成后，也就是第二步的firstTra()执行完毕。然后执行第二步后面的语句。最后返回第一步。执行后面的语句。直到执行到第一个最先打开的的函数运行完毕。这里可以理解为“归”）。<br>这样对递归的理解就比较容易了。</p>
-<p>2018/10/28 20:17:45<br>-原创</p>
+        <div class="article-info info-on-right">
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">生活</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Tips</a>
+        		</li>
+      		
+		</ul>
+	</div>
 
-      
+          
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Blogs//" class="article-tag-list-link color1">Blogs</a>
+        		</li>
+      		
+		</ul>
+	</div>
 
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
+
         </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://chenwx.cn/2018/10/28/二叉树的遍历理解递归/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2019/04/20/分流建议/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          关于对计算机大类分流的建议
-        
-      </div>
-    </a>
   
   
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  <div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="二叉树的遍历理解递归" data-title="从树的遍历理解递归" data-url="http://chenwx.cn/2018/10/28/二叉树的遍历理解递归/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"true"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -360,10 +244,10 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
 		isTag: false,
-		isCategory: false,
+		isCategory: true,
 		open_in_new: false,
 		toc_hide_index: true,
 		root: "/",
