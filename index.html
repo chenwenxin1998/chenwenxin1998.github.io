@@ -160,7 +160,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Topyra-使用技巧"><a href="#Topyra-使用技巧" class="headerlink" title="Topyra 使用技巧"></a>Topyra 使用技巧</h1><h2 id="1-常用快捷键"><a href="#1-常用快捷键" class="headerlink" title="1.常用快捷键"></a>1.常用快捷键</h2><table>
+        <hr>
+<p>title:Topyra 使用技巧</p>
+<h2 id="tags-技巧"><a href="#tags-技巧" class="headerlink" title="tags:[技巧]"></a>tags:[技巧]</h2><h1 id="Topyra-使用技巧"><a href="#Topyra-使用技巧" class="headerlink" title="Topyra 使用技巧"></a>Topyra 使用技巧</h1><h2 id="1-常用快捷键"><a href="#1-常用快捷键" class="headerlink" title="1.常用快捷键"></a>1.常用快捷键</h2><table>
 <thead>
 <tr>
 <th style="text-align:center">Action</th>
@@ -218,6 +220,64 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/06/09/topyra使用/Typora 使用技巧/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-微信小程序/小程序端填坑" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>title:微信小程序常见错误<br>categories:微信小程序</p>
+<h2 id="tags-微信小程序"><a href="#tags-微信小程序" class="headerlink" title="tags:[微信小程序]"></a>tags:[微信小程序]</h2><h2 id="错误一：-page-pages-XXX-XXX-not-found-May-be-caused-by-1-Forgot-to-add-page-route-in-app-json-2-Invoking-Page-in-async-task"><a href="#错误一：-page-pages-XXX-XXX-not-found-May-be-caused-by-1-Forgot-to-add-page-route-in-app-json-2-Invoking-Page-in-async-task" class="headerlink" title="错误一： page[pages/XXX/XXX] not found.May be caused by :1. Forgot to add page route in app.json.2. Invoking Page() in async task."></a>错误一： page[pages/XXX/XXX] not found.May be caused by :1. Forgot to add page route in app.json.2. Invoking Page() in async task.</h2><p><img src="https://images2015.cnblogs.com/blog/781239/201611/781239-20161110162412795-1934588902.png"></p>
+<p><img src="https://images2015.cnblogs.com/blog/781239/201611/781239-20161110162424327-311441934.png"></p>
+<h2 id="错误二：wx-redirectTo-与-wx-navigateTo-跳转没有反应"><a href="#错误二：wx-redirectTo-与-wx-navigateTo-跳转没有反应" class="headerlink" title="错误二：wx.redirectTo 与  wx.navigateTo 跳转没有反应"></a>错误二：wx.redirectTo 与  wx.navigateTo 跳转没有反应</h2><h2 id="错误原因：二级页面应放在一级页面后面，如图所示："><a href="#错误原因：二级页面应放在一级页面后面，如图所示：" class="headerlink" title="错误原因：二级页面应放在一级页面后面，如图所示："></a>错误原因：二级页面应放在一级页面后面，如图所示：</h2><ul>
+<li><p>确定要跳转的页面不是属于 tabBar 页面(如果是,需使用wx.switchTab 实现跳转)</p>
+</li>
+<li><p>wx.navigateTo 有十层限制  (保留当前页面，跳转到应用内的某个页面，使用wx.navigateBack可以返回到原页面。), 无法跳转可以使用 wx.redirectTo 跳转 (关闭当前页面，跳转到应用内的某个页面。</p>
+</li>
+<li>time:2019/6/9</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/06/05/微信小程序/小程序端填坑/">展开全文 >></a>
         </p>
       
 
