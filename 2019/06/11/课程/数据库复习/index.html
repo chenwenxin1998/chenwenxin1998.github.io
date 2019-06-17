@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Chen&#39;Blog">
 <meta property="og:description" content="数据库原理及应用错题复习:sun_with_face:">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-17T03:22:33.821Z">
+<meta property="og:updated_time" content="2019-06-17T09:39:12.626Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库原理及应用复习">
 <meta name="twitter:description" content="数据库原理及应用错题复习:sun_with_face:">
@@ -192,6 +192,8 @@
 </li>
 <li><p><strong>什么是视图，他的优点是什么？</strong></p>
 </li>
+<li><p>SQL用视图（VIEW）概念支持非标准的外模式概念。视图是从一个或者几个基本表导出来的表，虽然他也是关系形式，但它本身不实际存储在数据库中，只存放对视图的定义信息没有对应的数据。因此，视图是一个虚表或虚关系，而基本表是一种实关系。</p>
+</li>
 </ul>
 <h3 id="第二章-数据模型"><a href="#第二章-数据模型" class="headerlink" title="第二章 数据模型"></a>第二章 数据模型</h3><ul>
 <li>在数据库技术中，面向对象数据模型是一种 <strong>结构模型</strong></li>
@@ -209,10 +211,21 @@
 <li>数据库管理系统（DBMS）的主要功能是<strong>数据定义</strong>，<strong>数据操纵功能</strong>，<strong>数据库的管理运行</strong>，<strong>数据库的建立维护</strong></li>
 <li>数据库三级模式中，用逻辑数据模型对用户所用到的那部分数据的描述是<strong>外模式</strong></li>
 <li>在数据库中，描述数据库的各级数据结构，称为<strong>数据字典</strong></li>
-<li>数据库语言包括<strong>数据描述语言</strong> ,<strong>数据操纵语言</strong>两大部分，前者负责描述和定义数据库的各种特性，后者说明对数据进行的各种操作。0o,,l0</li>
-<li></li>
+<li>数据库语言包括<strong>数据描述语言</strong> ,<strong>数据操纵语言</strong>两大部分，前者负责描述和定义数据库的各种特性，后者说明对数据进行的各种操作。</li>
 </ul>
-
+<h3 id="第四章-关系数据库方法"><a href="#第四章-关系数据库方法" class="headerlink" title="第四章 关系数据库方法"></a>第四章 关系数据库方法</h3><ul>
+<li>关系型数据库<font color="red">(关系模型)</font>中的码表示<strong>能唯一标识元组的属性和属性集合</strong></li>
+<li>取出关系中的</li>
+<li>候选码中的属性称为<strong>主属性</strong></li>
+<li>下列关系代数操作中，哪些运算要求两个运算对象其属性结构完全相同<strong>并，交，差</strong></li>
+<li>根据参照完整性规则，若属性F是关系S的主属性，同时又是关系R的外关键字，则关系R中F的值<strong>可以取空值</strong><font color="red"> (参照完整性规则：如果属性集K是关系模式R1的主键，同时K又是关系模式R2的外键，那么在R2的关系中K的取值只允许有两种情况，或者为空值，或者等于R1关系中的某个主键值)</font></li>
+<li>关系数据库中基于数学的两类运算是<strong>关系代数，关系演算</strong></li>
+<li>数据库关系中</li>
+<li>数据库的特点是<strong>集合操作</strong></li>
+<li>连接运算是由<strong>笛卡尔积</strong>，<strong>选择</strong>操作组合而成</li>
+<li>自然连接运算是由<strong>笛卡尔积，选择，投影</strong>操作组合而成</li>
+</ul>
+<h3 id="第五章-关系数据库的结构化查询语言SQL"><a href="#第五章-关系数据库的结构化查询语言SQL" class="headerlink" title="第五章 关系数据库的结构化查询语言SQL"></a>第五章 关系数据库的结构化查询语言SQL</h3>
       
 
       
@@ -326,6 +339,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2019/06/17/课程/SQL基本操作/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
   
   
     <a href="/2019/06/09/topyra使用/Typora 使用技巧/" id="article-nav-older" class="article-nav-link-wrap">
@@ -486,7 +508,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">微信小程序</a>
+                <a href="javascript:void(0)" class="js-tag color3">技巧</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -494,15 +516,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">生活</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">课程</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">技巧</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">生活</a>
+                <a href="javascript:void(0)" class="js-tag color1">微信小程序</a>
               </li>
             
             <div class="clearfix"></div>
