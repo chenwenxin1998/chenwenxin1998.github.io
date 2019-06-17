@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://chenwx.cn">
-  <title>Chen&#39;Blog</title>
+  <title>SQL的使用 | Chen&#39;Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="SQL基本操作我将SQL操作分为两个层面，①对表结构的操作如表的创建，属性的增删等；②表中元组的操作，如元组的增加，删除，修改等。">
+<meta name="keywords" content="课程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Chen&#39;Blog">
+<meta property="og:title" content="SQL的使用">
 <meta property="og:url" content="http://chenwx.cn/2019/06/17/课程/SQL基本操作/index.html">
 <meta property="og:site_name" content="Chen&#39;Blog">
 <meta property="og:description" content="SQL基本操作我将SQL操作分为两个层面，①对表结构的操作如表的创建，属性的增删等；②表中元组的操作，如元组的增加，删除，修改等。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-17T09:39:09.854Z">
+<meta property="og:updated_time" content="2019-06-17T13:28:34.300Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chen&#39;Blog">
+<meta name="twitter:title" content="SQL的使用">
 <meta name="twitter:description" content="SQL基本操作我将SQL操作分为两个层面，①对表结构的操作如表的创建，属性的增删等；②表中元组的操作，如元组的增加，删除，修改等。">
   
     <link rel="alternative" href="/atom.xml" title="Chen&#39;Blog" type="application/atom+xml">
@@ -157,15 +158,57 @@
             <article id="post-课程/SQL基本操作" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      SQL的使用
+    </h1>
+  
+
+        
+        <a href="/2019/06/17/课程/SQL基本操作/" class="archive-article-date">
+  	<time datetime="2019-06-17T08:55:04.632Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-17</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="SQL基本操作"><a href="#SQL基本操作" class="headerlink" title="SQL基本操作"></a>SQL基本操作</h4><p>我将SQL操作分为两个层面，①对表结构的操作如表的创建，属性的增删等；②表中元组的操作，如元组的增加，删除，修改等。</p>
+        <h3 id="SQL基本操作"><a href="#SQL基本操作" class="headerlink" title="SQL基本操作"></a>SQL基本操作</h3><p>我将SQL操作分为两个层面，①对表结构的操作如表的创建，属性的增删等；②表中元组的操作，如元组的增加，删除，修改等。</p>
 <a id="more"></a>
-<h5 id="数据库结构层面的操作"><a href="#数据库结构层面的操作" class="headerlink" title="数据库结构层面的操作"></a>数据库结构层面的操作</h5><h6 id="1-建表语句"><a href="#1-建表语句" class="headerlink" title="1.建表语句"></a>1.建表语句</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> student(</span><br><span class="line">    <span class="keyword">id</span> <span class="built_in">CHAR</span>(<span class="number">6</span>) PRIMARY <span class="keyword">KEY</span>,<span class="comment">--定义一个主键</span></span><br><span class="line">    <span class="keyword">name</span> <span class="built_in">VARCHAR</span>(<span class="number">10</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">    age <span class="built_in">INT</span>(<span class="number">3</span>) ,</span><br><span class="line">    gender <span class="built_in">int</span>(<span class="number">1</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h4 id="数据库结构层面的操作"><a href="#数据库结构层面的操作" class="headerlink" title="数据库结构层面的操作"></a>数据库结构层面的操作</h4><h5 id="1-建表语句"><a href="#1-建表语句" class="headerlink" title="1.建表语句"></a>1.建表语句</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> student(</span><br><span class="line">    <span class="keyword">id</span> <span class="built_in">CHAR</span>(<span class="number">6</span>) PRIMARY <span class="keyword">KEY</span>,<span class="comment">--定义一个主键</span></span><br><span class="line">    <span class="keyword">name</span> <span class="built_in">VARCHAR</span>(<span class="number">10</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">    age <span class="built_in">INT</span>(<span class="number">3</span>) ,</span><br><span class="line">    gender <span class="built_in">int</span>(<span class="number">1</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 <p>建表格式为CREATE TABLE &lt;表名&gt;(   </p>
 <p>​    &lt;属性&gt;&lt;类型&gt;&lt;约束&gt;[其他参数] ，</p>
 <p>​    &lt;属性&gt;&lt;类型&gt;&lt;约束&gt;[其他参数] </p>
 <p>)</p>
+<h6 id="定义主关键字"><a href="#定义主关键字" class="headerlink" title="定义主关键字"></a>定义主关键字</h6><p>①列出属性<font color="red">时</font>使用保留字PRIMARY KEY具体使用如下</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">id CHAR(6) PRIMARY KEY,<span class="comment">--定义一个主键</span></span><br></pre></td></tr></table></figure>
+<p>②列出属性<font color="red">后</font>，再使用PRIMARY KEY附加声明（假设这里不能出现同名学生）：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> student(</span><br><span class="line">    <span class="keyword">id</span> <span class="built_in">CHAR</span>(<span class="number">6</span>) ,</span><br><span class="line">    <span class="keyword">name</span> <span class="built_in">VARCHAR</span>(<span class="number">10</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">    age <span class="built_in">INT</span> ,</span><br><span class="line">    gender <span class="built_in">int</span>(<span class="number">1</span>),</span><br><span class="line">    PRIMARY <span class="keyword">KEY</span>(<span class="keyword">id</span>，<span class="keyword">name</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>如果关键字有多个属性构成，不能使用第一种方法</p>
+<p>③使用保留字UNIQUE <font color="red">(一个表中只有一个PRIMARY KEY，但可能有多个UNIQUE)</font>,假设这里不能出现同名学生</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> student(</span><br><span class="line">    <span class="keyword">id</span> <span class="built_in">CHAR</span>(<span class="number">6</span>) <span class="keyword">UNIQUE</span>,</span><br><span class="line">    <span class="keyword">name</span> <span class="built_in">VARCHAR</span>(<span class="number">10</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">UNIQUE</span>,</span><br><span class="line">    age <span class="built_in">INT</span>(<span class="number">3</span>) ,</span><br><span class="line">    gender <span class="built_in">int</span>(<span class="number">1</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h6 id="定义外部关键字"><a href="#定义外部关键字" class="headerlink" title="定义外部关键字"></a>定义外部关键字</h6><p>①如果外部关键字只有一个属性，可以在列出属性<font color="red">时</font>使用 REFERENCES 表名（属性）的形式</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> student(</span><br><span class="line">    <span class="keyword">id</span> <span class="built_in">CHAR</span>(<span class="number">6</span>) PRIMARY <span class="keyword">KEY</span>,<span class="comment">--定义一个主键</span></span><br><span class="line">    <span class="keyword">name</span> <span class="built_in">VARCHAR</span>(<span class="number">10</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">    age <span class="built_in">INT</span> ,</span><br><span class="line">    gender <span class="built_in">int</span>(<span class="number">1</span>),</span><br><span class="line">    <span class="keyword">class</span> <span class="built_in">INT</span>(<span class="number">3</span>) <span class="keyword">REFERENCES</span> <span class="keyword">class</span>(classId)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>②如果不止一个外键的话，列出属性<font color="red">后</font>    </p>
+<p>使用</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">FOREIGN KEY(属性名) </span><br><span class="line">   		REFERENCES 对应表名(对应表属性名)</span><br><span class="line"></span><br><span class="line">FOREIGN KEY(属性名) </span><br><span class="line">   		REFERENCES 对应表名(对应表属性名)</span><br></pre></td></tr></table></figure>
+<p>来声明外键如下所示</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> student(</span><br><span class="line">    <span class="keyword">id</span> <span class="built_in">CHAR</span>(<span class="number">6</span>) PRIMARY <span class="keyword">KEY</span>,<span class="comment">--定义一个主键</span></span><br><span class="line">    <span class="keyword">name</span> <span class="built_in">VARCHAR</span>(<span class="number">10</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">    age <span class="built_in">INT</span> ,</span><br><span class="line">    gender <span class="built_in">int</span>(<span class="number">1</span>),</span><br><span class="line">    <span class="keyword">FOREIGN</span> <span class="keyword">KEY</span>(<span class="keyword">class</span>) </span><br><span class="line">   		<span class="keyword">REFERENCES</span> <span class="keyword">class</span>(classId)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h5 id="2-表的修改与删除"><a href="#2-表的修改与删除" class="headerlink" title="2.表的修改与删除"></a>2.表的修改与删除</h5><h6 id="增加新的属性"><a href="#增加新的属性" class="headerlink" title="增加新的属性"></a>增加新的属性</h6><p>在表student中添加score属性</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> student <span class="keyword">ADD</span> score <span class="built_in">int</span>(<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+<h6 id="删除原有属性"><a href="#删除原有属性" class="headerlink" title="删除原有属性"></a>删除原有属性</h6><p>在表student中删除score属性</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> student <span class="keyword">DROP</span> score</span><br></pre></td></tr></table></figure>
+<h6 id="删除表"><a href="#删除表" class="headerlink" title="删除表"></a>删除表</h6><p>删除student表</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> student</span><br></pre></td></tr></table></figure>
+<h6 id="补充定义主键"><a href="#补充定义主键" class="headerlink" title="补充定义主键"></a>补充定义主键</h6><p>student表中添加id属性为关键字属性</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> student <span class="keyword">ADD</span> PRIMARY <span class="keyword">KEY</span>(<span class="keyword">id</span>)</span><br></pre></td></tr></table></figure>
+<h6 id="撤销主键定义"><a href="#撤销主键定义" class="headerlink" title="撤销主键定义"></a>撤销主键定义</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> student <span class="keyword">DROP</span> PRIMARY <span class="keyword">KEY</span></span><br></pre></td></tr></table></figure>
+<h6 id="补充外键定义"><a href="#补充外键定义" class="headerlink" title="补充外键定义"></a>补充外键定义</h6><p>在表student中,添加class外键</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> student </span><br><span class="line">    <span class="keyword">ADD</span> <span class="keyword">FOREIGN</span> <span class="keyword">KEY</span> <span class="keyword">class</span>  <span class="keyword">REFERENCES</span> <span class="keyword">class</span>(classId)</span><br></pre></td></tr></table></figure>
+<h6 id="撤销外键定义"><a href="#撤销外键定义" class="headerlink" title="撤销外键定义"></a>撤销外键定义</h6><p>在表student中，撤销class外键</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE student DROP FOREIGN KEY class</span><br></pre></td></tr></table></figure>
 
       
 
@@ -195,7 +238,29 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">课程</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/课程//" class="article-tag-list-link color3">课程</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -289,7 +354,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="课程/SQL基本操作" data-title="" data-url="http://chenwx.cn/2019/06/17/课程/SQL基本操作/"></div>
+	<div class="ds-thread" data-thread-key="课程/SQL基本操作" data-title="SQL的使用" data-url="http://chenwx.cn/2019/06/17/课程/SQL基本操作/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -426,15 +491,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">微信小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">生活</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">课程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">微信小程序</a>
               </li>
             
             <div class="clearfix"></div>
