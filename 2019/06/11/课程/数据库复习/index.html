@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="Chen&#39;Blog">
 <meta property="og:description" content="数据库原理及应用错题复习">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-17T14:48:00.463Z">
+<meta property="og:updated_time" content="2019-06-18T04:40:20.653Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库原理及应用复习">
 <meta name="twitter:description" content="数据库原理及应用错题复习">
@@ -354,7 +354,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-17 22:48:00" itemprop="dateModified" datetime="2019-06-17T22:48:00+08:00">2019-06-17</time>
+                <time title="修改时间：2019-06-18 12:40:20" itemprop="dateModified" datetime="2019-06-18T12:40:20+08:00">2019-06-18</time>
               
             
           </span>
@@ -413,6 +413,14 @@
 <li><p>:question:<strong>​ 什么是数据库三级模式结构？它有何优点？</strong></p>
 </li>
 <li><p>:a: 数据库的体系结构分为三级：外部模式（External Schema）,概念模式（Conceptual Schema）,内部模式（Internal Schema），这个结构称为“数据库的三级模式结构”</p>
+</li>
+<li><p>优点</p>
+<ul>
+<li>保证了数据独立性</li>
+<li>简化了用户接口，方便用户使用</li>
+<li>有利于数据共享</li>
+<li>有利于数据的安全保密</li>
+</ul>
 </li>
 <li><p>:question:  <strong>什么是数据模型，他的要素是什么？</strong></p>
 <p>:a: 数据模型是现实世界中的事物及其之间联系的一种抽象表示，是一种形式化描述数据，数据间联系以及有关语义约束规则的方法。通常一个数据库的数据模型由数据结构，数据操作，数据的约束条件三个部分组成。</p>
@@ -483,7 +491,17 @@
 </ul>
 <p>　</p>
 <h3 id="第六章"><a href="#第六章" class="headerlink" title="第六章"></a>第六章</h3><h4 id="基本知识点-4"><a href="#基本知识点-4" class="headerlink" title="基本知识点"></a>基本知识点</h4><p>本章主要讨论如何设计关系模式问题。关系模式设计得好与坏，直接影响到数据冗余度、数据一致性等问题。本章主要讲解关系模式规范化理论，用更加形式化的关系数据理论来描述和研究关系模型。<br>（1）关系模式设计中存在的问题<br>关系模式的冗余和异常问题。<br>（2）函数依赖<br>FD的定义、逻辑蕴涵、闭包、推理规则、与关键码的联系；平凡的FD；属性集的闭包；FD集的等价；最小依赖集。<br>（3）关系模式的分解<br>无损分解的定义、性质、测试；保持依赖集的分解。<br>（4）关系模式的范式<br>1NF，2NF，3NF，BCNF；分解成2NF、3NF模式集的算法；MVD、4NF、5NF的定义。<br>了解：规范化的目的，函数依赖集的等价和覆盖。<br>掌握：函数依赖的概念及有关理论，多值依赖与第四范式。<br>理解：关系模式的分解方法。<br>灵活运用：可根据要求将关系模式分解为符合某种要求的范式，或分析、判断给定的关系模式所满足的范式级别。</p>
-<h4 id="题"><a href="#题" class="headerlink" title="题"></a>题</h4><h3 id="第七章"><a href="#第七章" class="headerlink" title="第七章"></a>第七章</h3><h4 id="基本知识点-5"><a href="#基本知识点-5" class="headerlink" title="基本知识点"></a>基本知识点</h4><p>数据库设计（Database Design，简记为DBD）是指对于给定的软、硬件环境，针对现实问题，设计一个较优的数据模型，建立DB结构和DB应用系统。本章主要讨论DBD的方法和步骤，详细介绍DBD的全过程。本章的重点是概念设计中的ER模型设计方法和逻辑设计中ER模型向关系模型转换的规则。<br>（1）数据库系统生存期及其7个阶段的任务和工作。<br>（2）需求描述与分析，需求分析的步骤。<br>（3）ER模型的基本元素，属性的分类，联系的元数。采用ER方法的概念设计步骤。<br>（4）ER模型到关系模型的转换规则。采用ER方法的逻辑设计步骤。<br>（5）介绍Microsoft Visio数据流图绘制工具，以及Power Designer建模工具绘制E-R图。<br>了解：数据库的设计方法和设计步骤，需求分析的实现方法。数据库运行与维护的概念，以及常用数据库设计工具。<br>掌握：数据库概念结构设计的要求及方法。<br>理解：数据库逻辑结构设计、物理结构设计、数据库设计评价的有关知识及方法。<br>灵活运用：会根据局部E-R模型合并产生全局E-R模型，分析存在冲突的类型，并消除有关冲突，常用的E-R辅助设计工具。</p>
+<h4 id="题"><a href="#题" class="headerlink" title="题"></a>题</h4><ul>
+<li>关系演算可分为<strong>元组演算</strong>与<strong>域演算</strong></li>
+<li>如果Y⊆X⊆U，则X→Y成立，这条推理规则称为<strong>自反律</strong>，如果X→Y和WY→Z成立，则WX→Z成立，这条推理规则称为<strong>伪传递率</strong></li>
+<li>函数依赖完备的推理规则集包括<strong>自反律，增广律，传递律</strong></li>
+<li>关系模式的操作异常问题往往是由<strong>数据冗余</strong>造成的</li>
+<li>在关系数据库的规范化理论中，在执行“分解”时，必须遵守规范化原则：<strong>保持原有的依赖关系，无损连接</strong></li>
+<li>设关系模式R(ABC)上成立的函数依赖集F为{B→C, C→A}，ρ=(AB,AC)为R的一个分解，那么分解ρ<strong>丢失了B→C</strong></li>
+<li>若关系R的候选码都是由单属性构成的，则R的最高范式必定是<strong>2NF</strong></li>
+<li></li>
+</ul>
+<h3 id="第七章"><a href="#第七章" class="headerlink" title="第七章"></a>第七章</h3><h4 id="基本知识点-5"><a href="#基本知识点-5" class="headerlink" title="基本知识点"></a>基本知识点</h4><p>数据库设计（Database Design，简记为DBD）是指对于给定的软、硬件环境，针对现实问题，设计一个较优的数据模型，建立DB结构和DB应用系统。本章主要讨论DBD的方法和步骤，详细介绍DBD的全过程。本章的重点是概念设计中的ER模型设计方法和逻辑设计中ER模型向关系模型转换的规则。<br>（1）数据库系统生存期及其7个阶段的任务和工作。<br>（2）需求描述与分析，需求分析的步骤。<br>（3）ER模型的基本元素，属性的分类，联系的元数。采用ER方法的概念设计步骤。<br>（4）ER模型到关系模型的转换规则。采用ER方法的逻辑设计步骤。<br>（5）介绍Microsoft Visio数据流图绘制工具，以及Power Designer建模工具绘制E-R图。<br>了解：数据库的设计方法和设计步骤，需求分析的实现方法。数据库运行与维护的概念，以及常用数据库设计工具。<br>掌握：数据库概念结构设计的要求及方法。<br>理解：数据库逻辑结构设计、物理结构设计、数据库设计评价的有关知识及方法。<br>灵活运用：会根据局部E-R模型合并产生全局E-R模型，分析存在冲突的类型，并消除有关冲突，常用的E-R辅助设计工具。</p>
 <h4 id="题-1"><a href="#题-1" class="headerlink" title="题"></a>题</h4><ul>
 <li>数据库设计中的数据流图和数据字典描述是哪个阶段的工作？<strong>需求分析</strong></li>
 <li>逻辑设计的主要任务是<strong>将概念设计得到的E-R图转换成DBMS支持的数据模型</strong></li>
@@ -498,7 +516,7 @@
 <li>合并局部E-R模型时主要考虑解决三类冲突<strong>属性冲突，命名冲突，结构冲突</strong></li>
 <li>数据库设计的步骤依次是<strong>需求分析，概念设计，逻辑设计，物理设计，实现，运行与维护</strong></li>
 <li>数据库的设计包括<strong>结构特性的设计与行为特征的设计</strong></li>
-<li>数据字典通常包括<strong>数据项，数据结构，数据流，数据储存，处理过程</strong></li>
+<li>数据字典通常包括<strong>数据项，数据结构，数据流，数                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    据储存，处理过程</strong></li>
 </ul>
 
       
